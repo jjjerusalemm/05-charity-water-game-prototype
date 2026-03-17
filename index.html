@@ -7,7 +7,56 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to the Charity Water Game Prototype</h1>
+    <header class="app-header">
+        <div class="logo">
+            <div class="logo__drop" aria-hidden="true"></div>
+            <h1>Charity Water Pump</h1>
+        </div>
+        <p class="tagline">Pump clean water for your community. Reach <strong>100 pumps</strong> to win!</p>
+    </header>
+
+    <main class="game">
+        <!-- Score + goal info -->
+        <section class="status" aria-live="polite">
+            <div class="status__row">
+                <div>
+                    <span class="label">Pumps:</span>
+                    <span id="score" class="value">0</span>
+                    <span class="small">/ 100</span>
+                </div>
+                <div>
+                    <span class="label">Progress:</span>
+                    <span id="percent" class="value">0%</span>
+                </div>
+            </div>
+
+            <div class="tank" aria-label="Water tank progress">
+                <div id="tankFill" class="tank__fill" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <!-- Pump button -->
+        <section class="controls">
+            <button id="pumpButton" class="button primary" type="button">
+                Pump Water 💧
+            </button>
+            <button id="resetButton" class="button secondary" type="button">
+                Reset
+            </button>
+        </section>
+
+        <!-- Win message (hidden until win) -->
+        <section id="winMessage" class="win" role="status" aria-live="polite">
+            <h2>🎉 You did it!</h2>
+            <p>You pumped <strong>100 times</strong> and filled the tank. Great job!</p>
+            <p class="small">Feel free to reset and pump again.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Built as a simple prototype — keep it fun and keep learning!</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
